@@ -11,4 +11,4 @@ I plan to keep adding games indefinitely and to list STMPCK on app stores, proba
 
 STMPCK is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). You can share and adapt it for noncommercial use with attribution, a license link, and a note indicating changes. Share adaptations under the same or a compatible license. See [LICENSE](LICENSE) for the full terms.
 
-Open `index.html` in a browser to preview the site. There is no build step. The GIFs come from the game’s bundled default and vivid sprite sheets. The page starts with still images and lets visitors turn animation on and off.
+Open `index.html` in a browser to preview the site. There is no build step. The GIFs come from the game’s bundled default and vivid sprite sheets. Previews autoplay by default and start still when visitors prefer reduced motion. Visitors can switch between still, animated, and vivid previews.

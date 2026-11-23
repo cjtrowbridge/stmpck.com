@@ -207,12 +207,22 @@
       base: image.getAttribute('src').slice(0, -4)
     }));
 
-    controls.addEventListener('change', event => {
-      const extension = { still: '.png', default: '.gif', vivid: '-vivid.gif' }[event.target.value];
+    function showPreviews(mode) {
+      const extension = { still: '.png', default: '.gif', vivid: '-vivid.gif' }[mode];
       for (const { image, base } of previews) {
         image.src = base + extension;
       }
-    });
+    }
+
+    controls.addEventListener('change', event => showPreviews(event.target.value));
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const applyMotionPreference = () => {
+      const mode = reducedMotion.matches ? 'still' : 'default';
+      controls.querySelector(`[value="${mode}"]`).checked = true;
+      showPreviews(mode);
+    };
+    reducedMotion.addEventListener('change', applyMotionPreference);
+    applyMotionPreference();
     controls.hidden = false;
   </script>
 </body>
