@@ -5,7 +5,7 @@ STMPCK (pronounced “stimpack”) is an unfinished beta of an offline collectio
 - [Download the Android beta APK](https://raw.githubusercontent.com/cjtrowbridge/stmpck-builds/main/latest.apk). Open it on your phone and allow installation from that source when Android prompts you. ADB over USB requires Developer options and USB debugging. For later updates, use **Settings → Check for update** in the app.
 - [Download the Linux beta](downloads/stmpck-linux-amd64), built on Debian for recent Debian and Ubuntu systems on amd64. Run `chmod +x stmpck-linux-amd64` and then `./stmpck-linux-amd64`. Download a fresh copy here to update.
 - [Get the STMPCK source and build instructions](https://github.com/cjtrowbridge/stmpck). Feel free to build and test on any platform you like.
-- [Share beta feedback on GitHub](https://github.com/cjtrowbridge/stmpck.com/issues/new). For bugs, include your device, operating system, and what you were doing when the bug appeared. Issues are public.
+- [Share beta feedback on GitHub](https://github.com/cjtrowbridge/stmpck/issues/new). For bugs, include your device, operating system, and what you were doing when the bug appeared. Issues are public.
 
 I plan to keep adding games indefinitely and to list STMPCK on app stores, probably for a small fee. I’ll keep it available for free here.
 
