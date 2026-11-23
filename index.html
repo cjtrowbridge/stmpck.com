@@ -3,86 +3,217 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Try the STMPCK Android beta and tell us how it feels to play.">
-  <title>STMPCK · Android beta</title>
+  <meta name="description" content="Try the STMPCK beta and tell me what you think.">
+  <title>STMPCK · beta</title>
   <style>
     :root {
       color-scheme: dark;
+      --background: #101a1a;
+      --panel: #192827;
+      --edge: #324b45;
+      --ink: #f2f0db;
+      --muted: #9daf9d;
+      --accent: #c3e88a;
+      --focus: #f6b69c;
+      background: var(--background);
+      color: var(--ink);
       font-family: system-ui, sans-serif;
-      background: #11141c;
-      color: #f4f2ed;
     }
 
     body { margin: 0; }
-    main, footer { max-width: 60rem; margin-inline: auto; padding-inline: 1.5rem; }
-    main { padding-block: clamp(3rem, 8vw, 6rem) 3rem; }
-
-    .status, figcaption {
-      font-family: ui-monospace, monospace;
-      font-size: .875rem;
-      letter-spacing: .06em;
-    }
-
-    .status { color: #c7fc93; text-transform: uppercase; }
-    h1 { margin: .15em 0; font-size: clamp(3rem, 12vw, 8rem); line-height: .9; letter-spacing: -.07em; }
-    h2 { font-size: clamp(1.65rem, 4vw, 2.4rem); line-height: 1.12; }
-    p { max-width: 57ch; line-height: 1.65; }
+    main, footer { max-width: 62rem; margin-inline: auto; padding-inline: 1.5rem; }
+    main { padding-block: clamp(2.5rem, 7vw, 5rem) 3rem; }
+    h1 { margin: .12em 0; font-size: clamp(3rem, 12vw, 8rem); line-height: .9; letter-spacing: -.07em; }
+    h2 { margin-block: 0 1rem; font-size: clamp(1.65rem, 4vw, 2.4rem); line-height: 1.12; }
+    h3 { margin-block: 0 .75rem; font-size: 1.2rem; }
+    p { max-width: 62ch; line-height: 1.65; }
     .intro { font-size: clamp(1.1rem, 2.6vw, 1.35rem); }
-    a { color: #c7fc93; text-underline-offset: .2em; }
-    a:focus-visible { outline: 3px solid #f3bdff; outline-offset: 5px; }
+    .status, figcaption { font: .875rem ui-monospace, monospace; }
+    .status { color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+    section { margin-block-start: clamp(2.5rem, 7vw, 4rem); }
 
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+      gap: .75rem;
+    }
+    .downloads article, figure { border: 1px solid var(--edge); background: var(--panel); }
+    .downloads article { padding: 1rem; }
+    .downloads article p:last-child { margin-bottom: 0; }
     .download {
       display: inline-block;
-      padding: .7rem 1rem;
+      padding: .65rem .85rem;
       border-radius: .25rem;
-      background: #c7fc93;
-      color: #11141c;
+      background: var(--accent);
+      color: var(--background);
       font-weight: 700;
     }
+    code { font-size: .95em; }
+    pre { margin-block: .85em; line-height: 1.6; overflow-x: auto; }
 
     .previews {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
-      gap: .75rem;
-      margin-block: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+      gap: .6rem;
+    }
+    figure { min-width: 0; margin: 0; }
+    figure img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+    figcaption { padding: .55rem .6rem; }
+    @media (max-width: 30rem) {
+      .previews { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
-    figure { margin: 0; border: 1px solid #414858; background: #1a202b; }
-    figure img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
-    figcaption { padding: .6rem .75rem; }
-    footer { padding-block: 0 2rem; }
+    fieldset { margin: 0 0 1rem; padding: 0; border: 0; }
+    legend { margin-bottom: .4rem; color: var(--muted); }
+    fieldset label { display: inline-flex; align-items: center; gap: .45rem; margin-right: 1rem; min-height: 2.75rem; }
+    input { accent-color: var(--accent); }
+    footer { padding-block: 1rem 2rem; }
   </style>
 </head>
 <body>
   <main>
-    <p class="status">Android beta</p>
-    <h1>STMPCK</h1>
-    <p class="intro">A collection of small offline games for the pleasure of playing. Pick a game, choose how intense it looks, and make yourself at home.</p>
-    <p>STMPCK (pronounced “stimpack”) is designed primarily for neurodivergent people and welcomes everyone. We’re looking for beta testers to try it and tell us how it feels.</p>
-    <p><a class="download" href="https://raw.githubusercontent.com/cjtrowbridge/stmpck-builds/main/latest.apk">Download the Android beta APK</a></p>
-    <p>Open the downloaded file on your phone and follow Android’s installation prompts.</p>
+    <header>
+      <p class="status">Public beta</p>
+      <h1>STMPCK</h1>
+      <p class="intro">A collection of small offline games for the pleasure of playing. Pick a game, choose how intense it looks, and make yourself at home.</p>
+      <p>STMPCK (pronounced “stimpack”) is designed primarily for neurodivergent people but welcomes everyone. I’m looking for beta testers to try it and tell me what they think.</p>
+      <p>This is an unfinished beta. I expect most of it to work, and you may still encounter bugs or rough edges.</p>
+    </header>
 
-    <div class="previews">
-      <figure>
-        <img src="images/merge.png" alt="Numbered tiles on a square puzzle board" width="96" height="96">
-        <figcaption>Merge</figcaption>
-      </figure>
-      <figure>
-        <img src="images/flow.png" alt="A network of colored paths and nodes on a grid" width="96" height="96">
-        <figcaption>Flow</figcaption>
-      </figure>
-      <figure>
-        <img src="images/planets.png" alt="A playfield of colorful planets" width="96" height="96">
-        <figcaption>Planets</figcaption>
-      </figure>
-    </div>
+    <section aria-labelledby="download">
+      <h2 id="download">Download the beta</h2>
+      <div class="downloads">
+        <article>
+          <h3>Android · ARM64</h3>
+          <a class="download" href="https://raw.githubusercontent.com/cjtrowbridge/stmpck-builds/main/latest.apk">Download the Android APK</a>
+          <p>Open the downloaded APK and allow your browser or file manager to install apps from that source when prompted. If you install using ADB over USB, enable Developer options and USB debugging.</p>
+          <p>To update, open the settings wheel in STMPCK, choose <strong>Check for update</strong>, and confirm the installation in Android.</p>
+        </article>
+        <article>
+          <h3>Linux · Debian/Ubuntu amd64</h3>
+          <a class="download" href="downloads/stmpck-linux-amd64" download>Download the Linux binary</a>
+          <p>Built on Debian for recent Debian and Ubuntu systems on x86-64. In the directory where you downloaded it, run:</p>
+          <pre><code>chmod +x stmpck-linux-amd64
+./stmpck-linux-amd64</code></pre>
+          <p>To update on Linux, download the latest binary here and replace your old copy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="gallery">
+      <h2 id="gallery">Explore the games</h2>
+      <fieldset hidden id="preview-controls">
+        <legend>Gameplay previews</legend>
+        <label><input type="radio" name="motion" value="still" checked> Still</label>
+        <label><input type="radio" name="motion" value="default"> Animate</label>
+        <label><input type="radio" name="motion" value="vivid"> Vivid</label>
+      </fieldset>
+      <div class="previews">
+        <figure>
+          <img src="images/merge.png" alt="Numbered tiles slide across a square puzzle board" width="96" height="96" loading="lazy">
+          <figcaption>Merge</figcaption>
+        </figure>
+        <figure>
+          <img src="images/snake.png" alt="A segmented snake turns to reach a piece of food" width="96" height="96" loading="lazy">
+          <figcaption>Snake</figcaption>
+        </figure>
+        <figure>
+          <img src="images/territory.png" alt="Numbered armies move between adjacent regions" width="96" height="96" loading="lazy">
+          <figcaption>Territory</figcaption>
+        </figure>
+        <figure>
+          <img src="images/linear.png" alt="Players drop pieces into columns on a board" width="96" height="96" loading="lazy">
+          <figcaption>Linear</figcaption>
+        </figure>
+        <figure>
+          <img src="images/bounce.png" alt="A paddle returns a ball across the court" width="96" height="96" loading="lazy">
+          <figcaption>Bounce</figcaption>
+        </figure>
+        <figure>
+          <img src="images/flow.png" alt="A grid of rotating paths connects to a central node" width="96" height="96" loading="lazy">
+          <figcaption>Flow</figcaption>
+        </figure>
+        <figure>
+          <img src="images/caliban.png" alt="A ship fires into a tube of approaching enemies" width="96" height="96" loading="lazy">
+          <figcaption>Caliban</figcaption>
+        </figure>
+        <figure>
+          <img src="images/bloom.png" alt="Patterns of cells grow and fade on a grid" width="96" height="96" loading="lazy">
+          <figcaption>Bloom</figcaption>
+        </figure>
+        <figure>
+          <img src="images/echo.png" alt="Numbered, shaped pads light up in sequence" width="96" height="96" loading="lazy">
+          <figcaption>Echo</figcaption>
+        </figure>
+        <figure>
+          <img src="images/brick.png" alt="A paddle bounces a ball into rows of bricks" width="96" height="96" loading="lazy">
+          <figcaption>Brick</figcaption>
+        </figure>
+        <figure>
+          <img src="images/planets.png" alt="Planets move along rings around a central star" width="96" height="96" loading="lazy">
+          <figcaption>Planets</figcaption>
+        </figure>
+        <figure>
+          <img src="images/drift.png" alt="A ship moves among drifting shapes" width="96" height="96" loading="lazy">
+          <figcaption>Drift</figcaption>
+        </figure>
+        <figure>
+          <img src="images/stack.png" alt="Falling blocks form rows at the bottom of a well" width="96" height="96" loading="lazy">
+          <figcaption>Stack</figcaption>
+        </figure>
+        <figure>
+          <img src="images/deduction.png" alt="Clues and player-entered numbers fill a nine-by-nine grid" width="96" height="96" loading="lazy">
+          <figcaption>Deduction</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cluster.png" alt="Colored bubbles launch toward a cluster overhead" width="96" height="96" loading="lazy">
+          <figcaption>Bubble Volley</figcaption>
+        </figure>
+        <figure>
+          <img src="images/wave.png" alt="A ship fires up at a formation of enemies" width="96" height="96" loading="lazy">
+          <figcaption>Wave</figcaption>
+        </figure>
+        <figure>
+          <img src="images/crossing.png" alt="A player crosses lanes of moving obstacles" width="96" height="96" loading="lazy">
+          <figcaption>Crossing</figcaption>
+        </figure>
+        <figure>
+          <img src="images/shift.png" alt="Blocks slide around a puzzle grid" width="96" height="96" loading="lazy">
+          <figcaption>Shift</figcaption>
+        </figure>
+      </div>
+    </section>
 
     <section aria-labelledby="feedback">
-      <h2 id="feedback">Tell us how it plays</h2>
-      <p>What did you want to keep playing? What felt hard to see or control? If something broke, tell us what happened, what you expected, and which phone and Android version you used.</p>
+      <h2 id="feedback">Tell me how it plays</h2>
+      <p>What did you want to keep playing? What felt hard to see or control? If something broke, tell me what you expected, what happened, and which device and OS version you used.</p>
       <p><a href="https://github.com/cjtrowbridge/stmpck.com/issues/new">Share beta feedback on GitHub</a>. Issues are public.</p>
     </section>
+
+    <section aria-labelledby="source">
+      <h2 id="source">Build it or follow along</h2>
+      <p>Feel free to build STMPCK from source and test it on any platform you like. <a href="https://github.com/cjtrowbridge/stmpck">Get the source and build instructions on GitHub</a>.</p>
+      <p>STMPCK is licensed under Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International. You can share and adapt it for noncommercial use. When sharing it, credit the creator, link to the license, and indicate changes. Share adaptations under the same or a compatible license. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Read the CC BY-NC-SA 4.0 license summary</a>.</p>
+      <p>I plan to keep adding games indefinitely. I also plan to list STMPCK on app stores, probably for a small fee. I’ll keep it available for free here.</p>
+    </section>
   </main>
-  <footer><a href="LICENSE">License</a></footer>
+  <footer><a href="LICENSE">Full license text</a></footer>
+  <script>
+    const controls = document.querySelector('#preview-controls');
+    const previews = Array.from(document.querySelectorAll('.previews img'), image => ({
+      image,
+      base: image.getAttribute('src').slice(0, -4)
+    }));
+
+    controls.addEventListener('change', event => {
+      const extension = { still: '.png', default: '.gif', vivid: '-vivid.gif' }[event.target.value];
+      for (const { image, base } of previews) {
+        image.src = base + extension;
+      }
+    });
+    controls.hidden = false;
+  </script>
 </body>
 </html>
