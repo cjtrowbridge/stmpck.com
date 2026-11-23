@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try the STMPCK Android beta and tell us how it feels to play.">
+  <title>STMPCK · Android beta</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, sans-serif;
+      background: #11141c;
+      color: #f4f2ed;
+    }
+
+    body { margin: 0; }
+    main, footer { max-width: 60rem; margin-inline: auto; padding-inline: 1.5rem; }
+    main { padding-block: clamp(3rem, 8vw, 6rem) 3rem; }
+
+    .status, figcaption {
+      font-family: ui-monospace, monospace;
+      font-size: .875rem;
+      letter-spacing: .06em;
+    }
+
+    .status { color: #c7fc93; text-transform: uppercase; }
+    h1 { margin: .15em 0; font-size: clamp(3rem, 12vw, 8rem); line-height: .9; letter-spacing: -.07em; }
+    h2 { font-size: clamp(1.65rem, 4vw, 2.4rem); line-height: 1.12; }
+    p { max-width: 57ch; line-height: 1.65; }
+    .intro { font-size: clamp(1.1rem, 2.6vw, 1.35rem); }
+    a { color: #c7fc93; text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid #f3bdff; outline-offset: 5px; }
+
+    .download {
+      display: inline-block;
+      padding: .7rem 1rem;
+      border-radius: .25rem;
+      background: #c7fc93;
+      color: #11141c;
+      font-weight: 700;
+    }
+
+    .previews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+      gap: .75rem;
+      margin-block: 2.5rem;
+    }
+
+    figure { margin: 0; border: 1px solid #414858; background: #1a202b; }
+    figure img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+    figcaption { padding: .6rem .75rem; }
+    footer { padding-block: 0 2rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="status">Android beta</p>
+    <h1>STMPCK</h1>
+    <p class="intro">A collection of small offline games for the pleasure of playing. Pick a game, choose how intense it looks, and make yourself at home.</p>
+    <p>STMPCK (pronounced “stimpack”) is designed primarily for neurodivergent people and welcomes everyone. We’re looking for beta testers to try it and tell us how it feels.</p>
+    <p><a class="download" href="https://raw.githubusercontent.com/cjtrowbridge/stmpck-builds/main/latest.apk">Download the Android beta APK</a></p>
+    <p>Open the downloaded file on your phone and follow Android’s installation prompts.</p>
+
+    <div class="previews">
+      <figure>
+        <img src="images/merge.png" alt="Numbered tiles on a square puzzle board" width="96" height="96">
+        <figcaption>Merge</figcaption>
+      </figure>
+      <figure>
+        <img src="images/flow.png" alt="A network of colored paths and nodes on a grid" width="96" height="96">
+        <figcaption>Flow</figcaption>
+      </figure>
+      <figure>
+        <img src="images/planets.png" alt="A playfield of colorful planets" width="96" height="96">
+        <figcaption>Planets</figcaption>
+      </figure>
+    </div>
+
+    <section aria-labelledby="feedback">
+      <h2 id="feedback">Tell us how it plays</h2>
+      <p>What did you want to keep playing? What felt hard to see or control? If something broke, tell us what happened, what you expected, and which phone and Android version you used.</p>
+      <p><a href="https://github.com/cjtrowbridge/stmpck.com/issues/new">Share beta feedback on GitHub</a>. Issues are public.</p>
+    </section>
+  </main>
+  <footer><a href="LICENSE">License</a></footer>
+</body>
+</html>
